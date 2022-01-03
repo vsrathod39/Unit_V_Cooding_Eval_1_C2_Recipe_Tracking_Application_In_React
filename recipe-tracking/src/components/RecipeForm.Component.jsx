@@ -1,18 +1,31 @@
 import { useRef, useState } from "react";
 import { Div } from "../styled-components/RecipeForm.Styled";
 
-export const RecipeForm = () => {
+export const RecipeForm = ({ getFormData }) => {
   const [formData, setFormData] = useState();
+  const pic_path = useRef();
 
   const handleChange = (e) => {
-    const [name, value] = e.target;
-    setFormData([{ ...formData, [name]: value }]);
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: pic_path.current.files.length
+        ? URL.createObjectURL(pic_path.current.files[0])
+        : value,
+    });
   };
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    console.log("hi");
+    getFormData(formData);
+  };
+
   console.log(formData);
   return (
     <>
       <Div>
-        <form>
+        <form onSubmit={submitForm}>
           <input
             onChange={handleChange}
             type="text"
@@ -39,8 +52,14 @@ export const RecipeForm = () => {
           />
           <div>
             <p>Upload Image: </p>
-            <input type="file" name="image" />
+            <input
+              onChange={handleChange}
+              ref={pic_path}
+              type="file"
+              name="image"
+            />
           </div>
+          <input type="submit" />
         </form>
       </Div>
     </>
