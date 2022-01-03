@@ -1,16 +1,17 @@
 import { Div, Div2 } from "../styled-components/ShowInnfo.Style";
 
-export const ShowInfo = ({ data }) => {
-  if (!data) {
+export const ShowInfo = ({ data, goBack }) => {
+  if (!data.length > 0) {
     return null;
   }
+
   return (
     <>
       <Div>
         {data.map((el) => {
           return (
             <>
-              <div key={el.nano_id}>
+              <div>
                 <p>
                   <b>Recipe Title :</b>{" "}
                   <span style={{ fontSize: "19px" }}>{el.title}</span>
@@ -36,6 +37,7 @@ export const ShowInfo = ({ data }) => {
         {" "}
         <img src={data[0].image} alt="" />
       </Div2>
+      <button onClick={goBack}>Back</button>
     </>
   );
 };

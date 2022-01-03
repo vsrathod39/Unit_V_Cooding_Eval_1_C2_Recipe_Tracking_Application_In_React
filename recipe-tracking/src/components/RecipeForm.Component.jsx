@@ -19,7 +19,14 @@ export const RecipeForm = ({ getFormData }) => {
   const submitForm = (e) => {
     e.preventDefault();
     formData.nano_id = nanoid();
+    handleReset();
     getFormData(formData);
+  };
+
+  const handleReset = () => {
+    Array.from(document.querySelectorAll("input")).forEach(
+      (input) => (input.value = "")
+    );
   };
 
   return (

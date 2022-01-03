@@ -1,14 +1,33 @@
+import { useState } from "react";
 import { Div } from "../styled-components/Filters.Style";
 
-export const Filters = () => {
+export const Filters = ({ getFilter }) => {
+  const [filter, setFilter] = useState();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFilter({
+      ...filter,
+      [name]: value,
+    });
+  };
+
+  const applyFilter = () => {
+    getFilter(filter);
+  };
+
   return (
     <>
       <Div>
         <div>
-          <input type="text" name="title" placeholder="title" />
+          <input
+            onChange={handleChange}
+            type="text"
+            name="title"
+            placeholder="title"
+          />
         </div>
         <div>
-          <select name="time">
+          <select onChange={handleChange} name="time">
             <option value="">-- cookin time --</option>
             <option value="30">30 min</option>
             <option value="60">60 mi</option>
@@ -16,7 +35,7 @@ export const Filters = () => {
           </select>
         </div>
         <div>
-          <button>Apply</button>
+          <button onClick={applyFilter}>Apply</button>
         </div>
       </Div>
     </>

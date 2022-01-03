@@ -16,7 +16,28 @@ export const AppRecipeTracking = () => {
   const shoeInfo = (id) => {
     setItem(list.filter((el) => el.nano_id === id));
   };
+
+  const getFilter = (data) => {
+    const temp = [];
+    list.forEach((el) => {
+      if (data.title && data.time) {
+        if (el.title === data.title && Number(el.time) <= Number(data.time)) {
+          temp.push(el);
+        }
+      }
+    });
+    console.log(temp.length);
+    console.log(temp);
+    // if (temp.lenght > 0) {
+    setList(temp);
+    // }
+    console.log(list);
+  };
   console.log(list);
+  const goBack = () => {
+    setItem(null);
+  };
+
   return (
     <>
       <Div className="recipe-app">
@@ -27,7 +48,11 @@ export const AppRecipeTracking = () => {
               key={"A"}
               getFormData={getFormData}
             />
-            <Filters className={"secound-child"} key={"B"} />
+            <Filters
+              className={"secound-child"}
+              key={"B"}
+              getFilter={getFilter}
+            />
             <ShowRecipeList
               className="third-child"
               key={"C"}
@@ -37,7 +62,7 @@ export const AppRecipeTracking = () => {
           </>
         ) : (
           <>
-            <ShowInfo key={"D"} data={filterItem} />
+            <ShowInfo key={"D"} data={filterItem} goBack={goBack} />
           </>
         )}
       </Div>
