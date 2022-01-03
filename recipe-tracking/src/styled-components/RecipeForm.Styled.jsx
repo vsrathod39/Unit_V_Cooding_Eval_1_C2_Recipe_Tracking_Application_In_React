@@ -1,7 +1,9 @@
 import styled from "styled-components";
 export const Div = styled.div`
-  border: 1px solid blue;
-  width: 30vw;
+  border: 2px solid grey;
+  grid-area: a;
+  padding: 8px 15px;
+  width: 35vw;
   & form {
     display: flex;
     flex-direction: column;

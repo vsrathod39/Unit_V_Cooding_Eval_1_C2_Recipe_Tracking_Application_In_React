@@ -1,4 +1,3 @@
-import { useState, useRef } from "react";
 import { Div } from "../styled-components/ShowRecipeList.Styled";
 
 export const ShowRecipeList = ({ data, passid }) => {

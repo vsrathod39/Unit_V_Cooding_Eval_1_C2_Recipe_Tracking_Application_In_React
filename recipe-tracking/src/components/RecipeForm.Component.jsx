@@ -40,9 +40,9 @@ export const RecipeForm = ({ getFormData }) => {
           />
           <input
             onChange={handleChange}
-            type="text"
+            type="number"
             name="time"
-            placeholder="time to cook"
+            placeholder="time to cook in minute"
           />
           <input
             onChange={handleChange}
