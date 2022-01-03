@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { nanoid } from "nanoid";
 import { Div } from "../styled-components/RecipeForm.Styled";
 
 export const RecipeForm = ({ getFormData }) => {
@@ -17,11 +18,10 @@ export const RecipeForm = ({ getFormData }) => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    console.log("hi");
+    formData.nano_id = nanoid();
     getFormData(formData);
   };
 
-  console.log(formData);
   return (
     <>
       <Div>

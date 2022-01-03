@@ -7,12 +7,12 @@ export const AppRecipeTracking = () => {
 
   const getFormData = (data) => {
     setList([...list, data]);
-    console.log("data: ", list);
   };
+  console.log("data: ", list);
   return (
     <>
       <RecipeForm getFormData={getFormData} />
-      <ShowRecipeList />
+      <ShowRecipeList data={list} />
     </>
   );
 };
