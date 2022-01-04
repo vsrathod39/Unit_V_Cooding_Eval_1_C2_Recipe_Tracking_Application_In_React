@@ -7,10 +7,7 @@ export const ShowRecipeList = ({ data, passid }) => {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    fetchData("http://localhost:3000/users");
-    if (data) {
-      filter();
-    }
+    fetchData(`http://localhost:3000/users`);
   }, [data]);
 
   const fetchData = async (link) => {
@@ -24,20 +21,6 @@ export const ShowRecipeList = ({ data, passid }) => {
     } finally {
       setIsLoading(false);
     }
-  };
-  console.log(data);
-  const filter = async () => {
-    try {
-      if (data) {
-        if (data?.title && data?.title && data.length) {
-          let res = await fetchData(
-            `http://localhost:3000/users?title<=${data.title}&time&`
-          );
-          res = await res.json();
-          setAllData(res);
-        }
-      }
-    } catch (error) {}
   };
 
   const showInfo = (e) => {
@@ -53,7 +36,17 @@ export const ShowRecipeList = ({ data, passid }) => {
       <Div>
         {allData.map((el) => {
           return (
-            <div key={el.nano_id} id={el.nano_id} onClick={showInfo}>
+            <div
+              style={{
+                backgroundImage: `url(${el.image})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+              key={el.nano_id}
+              id={el.nano_id}
+              onClick={showInfo}
+            >
               <p>{el.title}</p>
               <p>Cooking Time: {el.time}</p>
             </div>

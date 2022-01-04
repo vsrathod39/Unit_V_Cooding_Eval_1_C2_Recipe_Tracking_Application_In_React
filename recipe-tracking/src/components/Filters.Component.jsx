@@ -12,6 +12,7 @@ export const Filters = ({ getFilter }) => {
   };
 
   const applyFilter = () => {
+    filter.filterState = true;
     getFilter(filter);
   };
 

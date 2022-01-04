@@ -18,6 +18,8 @@ export const Div = styled.div`
     /* padding: 8px; */
     height: 140px;
     width: 19%;
+    font-size: 20px;
+    font-weight: 600;
     display: flex;
     flex-direction: column;
     justify-content: center;

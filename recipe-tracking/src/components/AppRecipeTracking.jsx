@@ -7,26 +7,34 @@ import { Div } from "../styled-components/AppRecipeTracking.Styled";
 
 export const AppRecipeTracking = () => {
   const [list, setList] = useState();
-  let [filterItem, setItem] = useState();
+  let [filterItem, setFilterItem] = useState();
   let filterParam;
 
   useEffect(() => {
     setList(filterParam);
   }, [filterParam]);
   const getFormData = (data) => {
-    filterParam = data;
+    console.log("hi");
+    setList(data);
   };
-  console.log("hi");
+
+  const fetchData = async (link) => {
+    console.log("hi");
+    try {
+      let res = await fetch(link);
+      res = await res.json();
+      setFilterItem(res);
+    } catch (error) {}
+  };
   const shoeInfo = (id) => {
-    setItem(list.filter((el) => el.nano_id === id));
+    fetchData(`http://localhost:3000/users?nano_id=${id}`);
+  };
+  const goBack = () => {
+    setFilterItem(null);
   };
 
   const getFilter = (data) => {
     setList(data);
-  };
-
-  const goBack = () => {
-    setItem(null);
   };
 
   return (
