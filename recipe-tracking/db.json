@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "title": "Vikas",
+      "ingredients": "kvbskbk",
+      "time": "34",
+      "instructions": "nlnblnldz",
+      "image": "https://foodish-api.herokuapp.com/images/biryani/biryani63.jpg",
+      "nano_id": "s4cS8g0a91rxnX9kP3pZr",
+      "id": 1
+    },
+    {
+      "title": "Vikas",
+      "ingredients": " f kj",
+      "time": "23",
+      "instructions": " kfbkdfb",
+      "image": "https://foodish-api.herokuapp.com/images/samosa/samosa19.jpg",
+      "nano_id": "KX4ASiPVq8rtTX3h71NMw",
+      "id": 2
+    },
+    {
+      "title": "Vikas",
+      "ingredients": " f kj",
+      "time": "23",
+      "instructions": " kfbkdfb",
+      "image": "https://foodish-api.herokuapp.com/images/rice/rice21.jpg",
+      "nano_id": "cWwRoNoh4CZ_TIvLcdXhc",
+      "id": 3
+    },
+    {
+      "title": "Vikas",
+      "time": "23",
+      "image": "https://foodish-api.herokuapp.com/images/pasta/pasta1.jpg",
+      "nano_id": "YEXYiABNchcQoNI7182wA",
+      "id": 4
+    },
+    {
+      "title": "Vikas",
+      "nano_id": "Cdr71wLFgZmUUwgZoiGFW",
+      "image": "https://foodish-api.herokuapp.com/images/burger/burger57.jpg",
+      "id": 5
+    },
+    {
+      "title": "v",
+      "nano_id": "780q7xGaTKErASa6B9PpW",
+      "image": "https://foodish-api.herokuapp.com/images/pasta/pasta14.jpg",
+      "id": 6
+    },
+    {
+      "title": "VIkas",
+      "nano_id": "01XSqb91vhNl8blBizcCw",
+      "image": "https://foodish-api.herokuapp.com/images/burger/burger73.jpg",
+      "id": 7
+    },
+    {
+      "title": "Vikas",
+      "nano_id": "v3Yzwpmzhb0g5tetluzE2",
+      "image": "https://foodish-api.herokuapp.com/images/idly/idly34.jpg",
+      "id": 8
+    },
+    {
+      "title": "Vikas",
+      "nano_id": "HayCdnRaiuPrJWUnixq_p",
+      "image": "https://foodish-api.herokuapp.com/images/dosa/dosa62.jpg",
+      "id": 9
+    },
+    {
+      "title": "Vikas",
+      "nano_id": "w82pOhA8t0mML_136myAX",
+      "image": "https://foodish-api.herokuapp.com/images/idly/idly36.jpg",
+      "id": 10
+    },
+    {
+      "title": "Vikas",
+      "nano_id": "j1-BB6ovy398W6xI8e90C",
+      "image": "https://foodish-api.herokuapp.com/images/butter-chicken/butter-chicken17.jpg",
+      "id": 11
+    },
+    {
+      "title": "Vikas",
+      "nano_id": "qlEwuoXZ4iR9xgc_cbnDE",
+      "image": "https://foodish-api.herokuapp.com/images/dessert/dessert4.jpg",
+      "id": 12
+    },
+    {
+      "title": "Vikas",
+      "nano_id": "UMiZkxcdIwFQ806kav6ej",
+      "image": "https://foodish-api.herokuapp.com/images/burger/burger47.jpg",
+      "id": 13
+    },
+    {
+      "title": "Ankit",
+      "ingredients": "e",
+      "time": "2",
+      "nano_id": "PL9-kFs9uZzvce2cn1mNL",
+      "image": "https://foodish-api.herokuapp.com/images/biryani/biryani77.jpg",
+      "id": 14
+    }
+  ]
+}

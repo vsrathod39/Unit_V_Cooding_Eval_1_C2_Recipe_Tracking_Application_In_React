@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RecipeForm } from "./RecipeForm.Component";
 import { ShowRecipeList } from "./ShowRecipeList.Component";
 import { ShowInfo } from "./ShowInnfo.Component";
@@ -6,34 +6,25 @@ import { Filters } from "./Filters.Component";
 import { Div } from "../styled-components/AppRecipeTracking.Styled";
 
 export const AppRecipeTracking = () => {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState();
   let [filterItem, setItem] = useState();
-  const getFormData = (data) => {
-    setItem();
-    setList([...list, data]);
-  };
+  let filterParam;
 
+  useEffect(() => {
+    setList(filterParam);
+  }, [filterParam]);
+  const getFormData = (data) => {
+    filterParam = data;
+  };
+  console.log("hi");
   const shoeInfo = (id) => {
     setItem(list.filter((el) => el.nano_id === id));
   };
 
   const getFilter = (data) => {
-    const temp = [];
-    list.forEach((el) => {
-      if (data.title && data.time) {
-        if (el.title === data.title && Number(el.time) <= Number(data.time)) {
-          temp.push(el);
-        }
-      }
-    });
-    console.log(temp.length);
-    console.log(temp);
-    // if (temp.lenght > 0) {
-    setList(temp);
-    // }
-    console.log(list);
+    setList(data);
   };
-  console.log(list);
+
   const goBack = () => {
     setItem(null);
   };
